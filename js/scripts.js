@@ -1,33 +1,39 @@
-// Scripting
+const url = "https://assets.codepen.io/16425/Spring-2025-Roster.json";
 
-// Data source
-const url = "https://assets.codepen.io/16425/web-3-spring-2024-roster.json";
-
-// Get data
 fetch(url)
   .then( response  => response.json())
   .then( data  => {
     
-    // check-check: is the data good?
+    
     console.log(data);
     console.log(data.Name);
     console.log(data.Image);
 
-    // get container for data
+    
     const roster = document.querySelector(".roster");
 
-    // loop through data
+    
     data.forEach( student => {
       
-      // template
+      
       const template = `
           <figure>
-            <figcaption> ${student.Name} </figcaption>
-            <img src=" ${student.Image} " alt=" ${student.Name} ">
+            <figcaption> ${student.name} </figcaption>
+            
+            <img src=" ${student.imageUrl} " alt=" ${student.Name} ">
+            <p>Status: ${student.status}</p>
+            <p>Fun Fact: ${student.funFact}</p>
+            <p>Favorite Color: ${student.favoriteColor}</p>
+            <p>Team: ${student.team}</p>
+            <p>Motto: ${student.motto}</p>
+            <p>Favorite Fictional Character: ${student.favoriteSimpsonsCharacter}</p>
+            <p>Favorite Band: ${student.favoriteBand}</p>
+            <p>Favorite Dish: ${student.favoriteFood}</p>
+            <p>Talent: ${student.talent}</p>
+            <p>Favorite Song: ${student.favoriteSong}</p>
           </figure>
        `;
 
-      // insert EACH `student` record into container
       roster.insertAdjacentHTML("afterbegin", template);
     });
   });

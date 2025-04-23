@@ -1,16 +1,51 @@
-/* Styling */
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Source+Sans+Pro&display=swap');
 
-/* Tempoarary Layout. Replace with your own */
-
-main.roster {
-    /* 3 column grid */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    margin: 1rem 0;
+:root {
+  --content-width: 50ch;
 }
 
-figure img {
-    /*  */
-    width: 100%;
+body {
+  background-color: #FFA02C;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+figure {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid #FF3232;
+}
+
+figcaption {
+  text-align: center;
+  font-family:Oswald;
+  font-weight: bold;
+  color: #2354BE;
+  margin-bottom: 0.5rem;
+  font-size:1.8rem;
+}
+
+p{
+  color: #2354BE;
+  font-family: 'Source Sans Pro';
+  font-size:1.2rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.roster {
+  margin: 0 auto;
+  max-width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
 }
